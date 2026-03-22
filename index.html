@@ -168,9 +168,9 @@
       }
     </style>
   </head>
-  <body class="bg-surface font-body text-on-surface antialiased">
+  <body class="overflow-x-hidden bg-surface font-body text-on-surface antialiased">
     <!-- TopNavBar -->
-    <nav class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="fixed top-4 inset-x-0 z-50 flex justify-center px-4 overflow-hidden">
       <div
         class="w-full max-w-5xl bg-[#f7fafd]/60 backdrop-blur-xl rounded-2xl shadow-xl flex justify-between items-center px-4 md:px-6 py-3"
       >
@@ -290,7 +290,7 @@
       </section>
       <!-- Projects Section -->
       <section class="space-y-12" id="projects">
-        <div class="flex items-center gap-4 reveal">
+        <div class="flex items-center gap-4 reveal min-w-0">
           <h2
             class="font-label text-primary text-lg tracking-widest uppercase shrink-0"
           >
@@ -303,7 +303,7 @@
 
           <a
             href="page-unavailable.html"
-            class="shrink-0 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-200 flex items-center gap-1 group"
+            class="whitespace-nowrap font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-200 flex items-center gap-1 group"
           >
             View All Projects
             <span
