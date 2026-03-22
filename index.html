@@ -248,7 +248,8 @@
             dipakai.
           </p>
           <div class="pt-4 flex gap-4">
-            <a href="page-unavailable.html"
+            <a
+              href="page-unavailable.html"
               class="px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-semibold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95"
             >
               Download CV
@@ -620,22 +621,32 @@
               Quick Message
             </h4>
 
-            <form class="space-y-4">
+            <form
+              action="https://formspree.io/f/mvzwnegp"
+              method="POST"
+              class="space-y-4"
+            >
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                required
                 class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary"
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                required
                 class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary"
               />
 
               <textarea
+                name="message"
                 rows="4"
                 placeholder="Your Message"
+                required
                 class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary resize-none"
               ></textarea>
 
@@ -646,10 +657,25 @@
                 Send Message
               </button>
             </form>
+            <p id="form-status" class="text-sm text-primary mt-2 hidden">
+              Message sent!
+            </p>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- Floating Button (pojok kiri bawah) -->
+    <a
+      href="page-unavailable.html"
+      class="fixed bottom-6 left-6 z-50 px-5 py-3 rounded-xl bg-[#f7fafd]/60 backdrop-blur-xl shadow-lg shadow-primary/10 hover:shadow-primary/20 shadow-blue-900/10 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all"
+    >
+      <span class="material-symbols-outlined text-primary">open_in_new</span>
+      <span class="font-label text-xs uppercase tracking-wider text-on-surface">
+        Other Page
+      </span>
+    </a>
+
     <!-- Footer -->
     <footer class="bg-surface-container-low mt-20 rounded-t-[2rem] reveal">
       <div
@@ -669,17 +695,19 @@
           >
           <a
             class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
-            href="#"
+            href="page-unavailable.html"
             >LinkedIn</a
           >
           <a
             class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
-            href="#"
+            href="https://www.instagram.com/amboy.ricarica_"
+            target="_blank"
             >Instagram</a
           >
           <a
             class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
-            href="#"
+            href="https://www.youtube.com/@livilingiblin"
+            target="_blank"
             >Youtube</a
           >
         </div>
@@ -688,6 +716,33 @@
         ></div>
       </div>
     </footer>
+    <script>
+      const form = document.querySelector("form");
+      const status = document.getElementById("form-status");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = new FormData(form);
+
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          status.classList.remove("hidden");
+          status.textContent = "Pesan berhasil dikirim! Terima kasih 🙌";
+          form.reset();
+        } else {
+          status.classList.remove("hidden");
+          status.textContent = "Oops, ada yang salah. Coba lagi nanti.";
+        }
+      });
+    </script>
     <script>
       // Intersection Observer for scroll animations
       const observerOptions = {
@@ -786,20 +841,16 @@
       });
     </script>
     <script>
-      const sections = document.querySelectorAll("section");
+      const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".nav-link");
 
       window.addEventListener("scroll", () => {
         let current = "";
 
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 150; // sedikit lebih besar biar akurat
-          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 200;
 
-          if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-          ) {
+          if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id");
           }
         });
