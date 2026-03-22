@@ -170,46 +170,48 @@
   </head>
   <body class="bg-surface font-body text-on-surface antialiased">
     <!-- TopNavBar -->
-    <nav
-      class="fixed top-4 w-full max-w-5xl mx-auto left-0 right-0 rounded-2xl bg-[#f7fafd]/60 backdrop-blur-xl z-50 shadow-xl shadow-blue-900/5 flex justify-between items-center px-6 py-3 transition-all"
-    >
+    <nav class="fixed top-4 inset-x-0 z-50 flex justify-center px-4">
       <div
-        class="text-xl font-headline font-bold tracking-tight text-on-surface"
+        class="w-full max-w-5xl bg-[#f7fafd]/60 backdrop-blur-xl rounded-2xl shadow-xl flex justify-between items-center px-4 md:px-6 py-3"
       >
-        TatTa's Page
-      </div>
-      <div class="hidden md:flex items-center gap-8">
-        <a
-          class="nav-link text-primary font-semibold border-b-2 border-primary pb-1 font-label text-sm uppercase tracking-wider"
-          href="#home"
+        <div
+          class="text-xl font-headline font-bold tracking-tight text-on-surface"
         >
-          Home
-        </a>
-        <a
-          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
-          href="#projects"
-        >
-          Projects
-        </a>
-        <a
-          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
-          href="#contact"
-        >
-          Contact
-        </a>
-      </div>
-      <div class="flex items-center gap-2">
-        <!-- hamburger -->
-        <button id="menu-btn" class="md:hidden p-2">
-          <span class="material-symbols-outlined text-primary">menu</span>
-        </button>
+          TatTa's Page
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="nav-link text-primary font-semibold border-b-2 border-primary pb-1 font-label text-sm uppercase tracking-wider"
+            href="#home"
+          >
+            Home
+          </a>
+          <a
+            class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+            href="#projects"
+          >
+            Projects
+          </a>
+          <a
+            class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+            href="#contact"
+          >
+            Contact
+          </a>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- hamburger -->
+          <button id="menu-btn" class="md:hidden p-2">
+            <span class="material-symbols-outlined text-primary">menu</span>
+          </button>
 
-        <!-- existing button -->
-        <button
-          class="p-2 hover:bg-surface-container-highest rounded-lg transition-all duration-200 active:scale-95"
-        >
-          <span class="material-symbols-outlined text-primary">code</span>
-        </button>
+          <!-- existing button -->
+          <button
+            class="p-2 hover:bg-surface-container-highest rounded-lg transition-all duration-200 active:scale-95"
+          >
+            <span class="material-symbols-outlined text-primary">code</span>
+          </button>
+        </div>
       </div>
     </nav>
     <!-- Mobile Menu -->
