@@ -171,7 +171,7 @@
   <body class="bg-surface font-body text-on-surface antialiased">
     <!-- TopNavBar -->
     <nav
-      class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl rounded-2xl bg-[#f7fafd]/60 backdrop-blur-xl z-50 shadow-xl shadow-blue-900/5 flex justify-between items-center px-6 py-3 transition-all"
+      class="fixed top-4 w-full max-w-5xl mx-auto left-0 right-0 rounded-2xl bg-[#f7fafd]/60 backdrop-blur-xl z-50 shadow-xl shadow-blue-900/5 flex justify-between items-center px-6 py-3 transition-all"
     >
       <div
         class="text-xl font-headline font-bold tracking-tight text-on-surface"
@@ -198,7 +198,13 @@
           Contact
         </a>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <!-- hamburger -->
+        <button id="menu-btn" class="md:hidden p-2">
+          <span class="material-symbols-outlined text-primary">menu</span>
+        </button>
+
+        <!-- existing button -->
         <button
           class="p-2 hover:bg-surface-container-highest rounded-lg transition-all duration-200 active:scale-95"
         >
@@ -206,6 +212,21 @@
         </button>
       </div>
     </nav>
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-screen bg-white/90 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-10 text-center transform -translate-y-full transition-all duration-500 md:hidden"
+    >
+      <a href="index.html#home" class="text-2xl font-semibold">Home</a>
+      <a href="index.html#projects" class="text-2xl font-semibold">Projects</a>
+      <a href="index.html#contact" class="text-2xl font-semibold">Contact</a>
+
+      <button id="close-menu" class="mt-10">
+        <span class="material-symbols-outlined text-3xl text-gray-600"
+          >close</span
+        >
+      </button>
+    </div>
     <main class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
       <!-- Hero Section -->
       <section
@@ -908,6 +929,25 @@
             link.classList.add("text-primary", "border-b-2", "border-primary");
             link.classList.remove("text-on-surface-variant");
           }
+        });
+      });
+    </script>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("-translate-y-full");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-y-full");
+      });
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("-translate-y-full");
         });
       });
     </script>
