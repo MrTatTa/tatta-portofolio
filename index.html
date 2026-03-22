@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png" href="img/web-icon.png" />
     <title>Bara P. // Full-stack Developer</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
@@ -220,7 +221,7 @@
               alt="Alex Curator Portrait"
               class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-2xl"
               data-alt="Professional portrait of a male developer with glasses"
-              src="photo-profile.jpeg"
+              src="img/photo-profile.jpeg"
             />
           </div>
         </div>
@@ -278,7 +279,7 @@
           ></div>
 
           <a
-            href="page-unavailable.html"
+            href="projects.html"
             class="shrink-0 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-200 flex items-center gap-1 group"
           >
             View All Projects
@@ -323,10 +324,15 @@
                 Solo System
               </h3>
               <p class="text-on-surface-variant leading-relaxed">
-                A highly modular analytics platform designed for large-scale
-                data visualization. Features a custom charting library and a
-                unique real-time collaborative workspace environment. Built with
-                extreme attention to typographic scale and performance.
+                Sebuah aplikasi produktivitas berbasis web yang mengadopsi
+                konsep sistem leveling seperti pada game RPG. Pengguna dapat
+                menyelesaikan tugas untuk mendapatkan EXP, gold, serta
+                meningkatkan level dan statistik, sehingga aktivitas sehari-hari
+                terasa lebih interaktif dan menyenangkan. Sistem ini dibangun
+                dengan arsitektur modular yang memungkinkan fitur seperti quest,
+                reward, streak, dan upgrade berjalan secara terintegrasi. Fokus
+                utama dari proyek ini adalah menciptakan pengalaman pengguna
+                yang engaging melalui mekanisme gamifikasi.
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
@@ -419,13 +425,19 @@
               <h3
                 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
               >
-                Baby Stunting Prediction
+                Prediksi Bayi Stunting dengan Machine Learning
               </h3>
               <p class="text-on-surface-variant leading-relaxed">
-                A boutique digital archive platform for independent
-                photographers. Focused on high-fidelity image rendering and a
-                seamless transition-heavy UX that mimics the feeling of browsing
-                physical prints.
+                Aplikasi berbasis web yang dirancang untuk memprediksi risiko
+                stunting pada bayi menggunakan metode machine learning Random
+                Forest. Sistem ini menganalisis berbagai indikator kesehatan
+                seperti usia, tinggi badan, berat badan, dan faktor lainnya
+                untuk menghasilkan prediksi yang akurat. Dibuat dengan fokus
+                pada kemudahan penggunaan, aplikasi ini menyediakan antarmuka
+                yang sederhana dan informatif sehingga dapat digunakan oleh
+                tenaga kesehatan maupun pengguna umum. Proyek ini menunjukkan
+                penerapan machine learning dalam menyelesaikan permasalahan
+                nyata di bidang kesehatan.
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
@@ -510,10 +522,14 @@
                 Sistem Manajemen Kios Terminal
               </h3>
               <p class="text-on-surface-variant leading-relaxed">
-                A productivity application that uses biometric feedback to
-                optimize focus sessions. Features a minimalist IDE-inspired
-                interface with deep customization options for advanced users and
-                developers.
+                Aplikasi manajemen yang dirancang untuk mengelola data kios
+                dalam lingkungan terminal. Sistem ini mencakup pengelolaan data
+                kios, penyewa, serta status operasional, sehingga memudahkan
+                proses administrasi dan monitoring secara terstruktur.
+                Dikembangkan dengan pendekatan yang praktis dan efisien,
+                aplikasi ini menekankan pada kemudahan akses data, alur kerja
+                yang jelas, serta kemampuan untuk menangani kebutuhan manajemen
+                dalam skala nyata.
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
@@ -626,11 +642,15 @@
               method="POST"
               class="space-y-4"
             >
+              <input type="text" name="_gotcha" style="display: none" />
+              <input type="hidden" name="_subject" value="New Scam Message!" />
+              <input type="hidden" name="form_time" id="form-time" />
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
                 required
+                minlength="3"
                 class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary"
               />
 
@@ -647,6 +667,7 @@
                 rows="4"
                 placeholder="Your Message"
                 required
+                minlength="10"
                 class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary resize-none"
               ></textarea>
 
@@ -667,7 +688,7 @@
 
     <!-- Floating Button (pojok kiri bawah) -->
     <a
-      href="page-unavailable.html"
+      href="https://tatta-lens.vercel.app/"
       class="fixed bottom-6 left-6 z-50 px-5 py-3 rounded-xl bg-[#f7fafd]/60 backdrop-blur-xl shadow-lg shadow-primary/10 hover:shadow-primary/20 shadow-blue-900/10 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all"
     >
       <span class="material-symbols-outlined text-primary">open_in_new</span>
@@ -740,6 +761,18 @@
         } else {
           status.classList.remove("hidden");
           status.textContent = "Oops, ada yang salah. Coba lagi nanti.";
+        }
+      });
+    </script>
+    <script>
+      const start = Date.now();
+
+      document.querySelector("form").addEventListener("submit", (e) => {
+        const time = (Date.now() - start) / 1000;
+
+        if (time < 3) {
+          e.preventDefault();
+          alert("Anda menekan terlalu cepat!");
         }
       });
     </script>

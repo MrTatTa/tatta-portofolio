@@ -1,0 +1,324 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png" href="img/web-icon.png" />
+    <title>Bara P. // Full-stack Developer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Space+Grotesk:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#000000",
+              "on-error": "#fff7f7",
+              "on-background": "#2b3438",
+              "on-tertiary-container": "#614468",
+              "on-secondary-fixed": "#354052",
+              "surface-variant": "#dbe4ea",
+              "tertiary-dim": "#66486d",
+              "on-primary-container": "#0d1071",
+              "on-tertiary": "#fff7fb",
+              "on-secondary-container": "#475265",
+              primary: "#5056af",
+              "surface-dim": "#d2dbe1",
+              "on-primary": "#fbf7ff",
+              "on-surface": "#2b3438",
+              background: "#f7fafd",
+              tertiary: "#73547a",
+              "secondary-container": "#d8e3fa",
+              "on-error-container": "#6e0523",
+              "outline-variant": "#aab3b9",
+              surface: "#f7fafd",
+              "error-dim": "#6b0221",
+              "secondary-fixed-dim": "#cad5ec",
+              "surface-bright": "#f7fafd",
+              "on-primary-fixed-variant": "#191e79",
+              "secondary-fixed": "#d8e3fa",
+              "surface-container-highest": "#dbe4ea",
+              "primary-fixed": "#9298f7",
+              "tertiary-fixed": "#f7d0fd",
+              "inverse-surface": "#0b0f11",
+              "primary-fixed-dim": "#858be8",
+              "surface-container": "#e8eff3",
+              "on-surface-variant": "#576065",
+              "error-container": "#f97386",
+              "on-secondary": "#f8f8ff",
+              "inverse-primary": "#9298f7",
+              "on-secondary-fixed-variant": "#515c6f",
+              "tertiary-container": "#f7d0fd",
+              error: "#a8364b",
+              outline: "#737c81",
+              "surface-container-high": "#e2e9ee",
+              "surface-container-low": "#eff4f8",
+              "primary-container": "#9298f7",
+              "on-tertiary-fixed": "#4d3155",
+              "inverse-on-surface": "#9a9da0",
+              "tertiary-fixed-dim": "#e9c2ee",
+              secondary: "#546073",
+              "on-tertiary-fixed-variant": "#6b4d72",
+              "surface-tint": "#5056af",
+              "secondary-dim": "#495467",
+              "primary-dim": "#4449a2",
+              "surface-container-lowest": "#ffffff",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+      }
+
+      /* Animation States */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s cubic-bezier(0.2, 0, 0, 1),
+          transform 0.7s cubic-bezier(0.2, 0, 0, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-scale {
+        opacity: 0;
+        transform: scale(0.95);
+        transition:
+          opacity 0.8s cubic-bezier(0.2, 0, 0, 1),
+          transform 0.8s cubic-bezier(0.2, 0, 0, 1);
+      }
+      .reveal-scale.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .line-grow {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+      .line-grow.active {
+        transform: scaleX(1);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal,
+        .reveal-scale,
+        .line-grow {
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+    </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#f7fafd] text-[#2b3438]">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl rounded-2xl bg-[#f7fafd]/60 backdrop-blur-xl z-50 shadow-xl shadow-blue-900/5 flex justify-between items-center px-6 py-3 transition-all"
+    >
+      <div
+        class="text-xl font-headline font-bold tracking-tight text-on-surface"
+      >
+        TatTa's Page
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          class="nav-link text-primary font-semibold border-b-2 border-primary pb-1 font-label text-sm uppercase tracking-wider"
+          href="index.html#home"
+        >
+          Home
+        </a>
+        <a
+          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+          href="index.html#projects"
+        >
+          Projects
+        </a>
+        <a
+          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+          href="index.html#contact"
+        >
+          Contact
+        </a>
+      </div>
+      <div class="flex items-center gap-4">
+        <button
+          class="p-2 hover:bg-surface-container-highest rounded-lg transition-all duration-200 active:scale-95"
+        >
+          <span class="material-symbols-outlined text-primary">code</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main id="all-projects" class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+      <!-- HEADER -->
+      <div class="mb-16">
+        <h1 class="text-5xl font-bold mb-4">All Projects</h1>
+        <p class="text-gray-500 max-w-xl">
+          Kumpulan semua project yang pernah saya kerjakan, mulai dari web app,
+          machine learning, hingga mobile development.
+        </p>
+      </div>
+
+      <!-- GRID PROJECT -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- CARD 1 -->
+        <a
+          href="https://solo-system-sigma.vercel.app/"
+          target="_blank"
+          class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+        >
+          <div class="overflow-hidden">
+            <img
+              src="projects/solo-system/index.png"
+              class="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+            />
+          </div>
+
+          <div class="p-5">
+            <h3
+              class="font-bold text-lg group-hover:text-indigo-600 transition"
+            >
+              Solo System
+            </h3>
+            <p class="text-sm text-gray-500 mt-2">
+              Sistem produktivitas berbasis gamifikasi dengan EXP, level, dan
+              quest.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 2 -->
+        <a
+          href="https://github.com/MrTatTa/stunting-detector"
+          target="_blank"
+          class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+        >
+          <img
+            src="projects/stikes/index.png"
+            class="w-full h-48 object-cover group-hover:scale-105 transition"
+          />
+
+          <div class="p-5">
+            <h3
+              class="font-bold text-lg group-hover:text-indigo-600 transition"
+            >
+              Stunting Prediction
+            </h3>
+            <p class="text-sm text-gray-500 mt-2">
+              Prediksi stunting bayi menggunakan Random Forest.
+            </p>
+          </div>
+        </a>
+
+        <!-- CARD 3 -->
+        <a
+          href="#"
+          class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+        >
+          <img
+            src="projects/dishub/index.png"
+            class="w-full h-48 object-cover group-hover:scale-105 transition"
+          />
+
+          <div class="p-5">
+            <h3
+              class="font-bold text-lg group-hover:text-indigo-600 transition"
+            >
+              Manajemen Kios Terminal
+            </h3>
+            <p class="text-sm text-gray-500 mt-2">
+              Sistem pengelolaan kios dan penyewa terminal.
+            </p>
+          </div>
+        </a>
+
+        <!-- TAMBAH PROJECT BARU DI SINI -->
+      </div>
+    </main>
+    <script>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 200;
+
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("text-primary", "border-b-2", "border-primary");
+          link.classList.add("text-on-surface-variant");
+
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("text-primary", "border-b-2", "border-primary");
+            link.classList.remove("text-on-surface-variant");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
