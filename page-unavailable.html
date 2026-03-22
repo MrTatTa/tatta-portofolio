@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Available</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#5056af",
+              surface: "#f7fafd",
+              "surface-container": "#e8eff3",
+              "surface-container-highest": "#dbe4ea",
+              "surface-container-low": "#eff4f8",
+              "on-surface": "#2b3438",
+              "on-surface-variant": "#576065",
+              secondary: "#546073",
+              "primary-container": "#9298f7",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Space Grotesk"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.7s cubic-bezier(0.2, 0, 0, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body class="bg-surface font-body text-on-surface">
+    <!-- Navbar sama seperti index -->
+    <nav
+      class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl rounded-2xl bg-[#f7fafd]/60 backdrop-blur-xl z-50 shadow-xl shadow-blue-900/5 flex justify-between items-center px-6 py-3"
+    >
+      <div class="text-xl font-headline font-bold">TatTa's Page</div>
+
+      <a
+        href="/"
+        class="text-primary font-label text-sm uppercase tracking-wider"
+      >
+        Back Home
+      </a>
+    </nav>
+
+    <main class="min-h-screen flex items-center justify-center px-6">
+      <section class="text-center max-w-2xl space-y-8 reveal">
+        <div class="flex justify-center">
+          <div
+            class="w-24 h-24 rounded-2xl bg-primary-container/30 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-primary text-5xl">
+              construction
+            </span>
+          </div>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl font-headline font-extrabold">
+          Page is
+          <span class="text-primary">Unavailable</span>
+        </h1>
+
+        <p class="text-on-surface-variant text-lg leading-relaxed">
+          Halaman ini masih dalam tahap pengembangan atau belum bisa ditampilkan
+          saat ini.
+        </p>
+
+        <p class="text-on-surface-variant">
+          Tapi tenang saja — halaman ini akan segera tersedia setelah selesai
+          dikerjakan.
+        </p>
+
+        <div class="flex justify-center gap-4 pt-6">
+          <a
+            href="/"
+            class="px-6 py-3 bg-primary text-white rounded-xl font-headline hover:scale-105 transition"
+          >
+            Back to Home
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+  </body>
+</html>

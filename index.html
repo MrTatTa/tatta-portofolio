@@ -160,6 +160,12 @@
         transition-delay: 300ms;
       }
     </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+    </style>
   </head>
   <body class="bg-surface font-body text-on-surface antialiased">
     <!-- TopNavBar -->
@@ -173,32 +179,36 @@
       </div>
       <div class="hidden md:flex items-center gap-8">
         <a
-          class="text-primary font-semibold border-b-2 border-primary pb-1 font-label text-sm uppercase tracking-wider"
-          href="#"
-          >Home</a
+          class="nav-link text-primary font-semibold border-b-2 border-primary pb-1 font-label text-sm uppercase tracking-wider"
+          href="#home"
         >
+          Home
+        </a>
         <a
-          class="text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
           href="#projects"
-          >Projects</a
         >
+          Projects
+        </a>
         <a
-          class="text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
-          href="#"
-          >Contact</a
+          class="nav-link text-on-surface-variant hover:text-primary transition-all duration-200 font-label text-sm uppercase tracking-wider"
+          href="#contact"
         >
+          Contact
+        </a>
       </div>
       <div class="flex items-center gap-4">
         <button
           class="p-2 hover:bg-surface-container-highest rounded-lg transition-all duration-200 active:scale-95"
         >
-          <span class="material-symbols-outlined text-primary">sensors</span>
+          <span class="material-symbols-outlined text-primary">code</span>
         </button>
       </div>
     </nav>
     <main class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
       <!-- Hero Section -->
       <section
+        id="home"
         class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32 reveal"
       >
         <div class="md:col-span-5 flex justify-center md:justify-start">
@@ -238,11 +248,11 @@
             dipakai.
           </p>
           <div class="pt-4 flex gap-4">
-            <button
+            <a href="page-unavailable.html"
               class="px-8 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-semibold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all active:scale-95"
             >
               Download CV
-            </button>
+            </a>
             <a
               href="https://github.com/MrTatTa"
               target="_blank"
@@ -261,9 +271,22 @@
           >
             // Selected Projects
           </h2>
+
           <div
             class="h-[1px] flex-grow bg-surface-container-highest line-grow"
           ></div>
+
+          <a
+            href="page-unavailable.html"
+            class="shrink-0 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-200 flex items-center gap-1 group"
+          >
+            View All Projects
+            <span
+              class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+            >
+              arrow_forward
+            </span>
+          </a>
         </div>
         <div class="flex flex-col gap-24">
           <!-- Project Card 1 -->
@@ -286,6 +309,10 @@
                 >
                 <span
                   class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// Tailwind</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
                   >// JavaScript</span
                 >
               </div>
@@ -302,7 +329,8 @@
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
-                href="https://solo-system-sigma.vercel.app/" target="_blank"
+                href="https://solo-system-sigma.vercel.app/"
+                target="_blank"
               >
                 View Project
                 <span
@@ -313,32 +341,37 @@
             </div>
             <div class="order-1 lg:order-2 group/media">
               <div
-                class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
+                class="slider flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
               >
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="Project View 1"
-                    class="w-full aspect-video object-cover rounded-2xl shadow-lg group-hover/media:shadow-2xl transition-shadow duration-500"
-                    data-alt="Modern data visualization dashboard with dark purple accents"
                     src="projects/solo-system/index.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="Project View 2"
-                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
-                    data-alt="Clean business analytics charts and graphs UI"
                     src="projects/solo-system/quest.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
+                  />
+                </div>
+                <div class="flex-none w-full snap-center">
+                  <img
+                    src="projects/solo-system/shop.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
               </div>
-              <div class="flex justify-center gap-1.5 mt-2">
-                <div class="w-8 h-1 rounded-full bg-primary"></div>
+
+              <div class="dots flex justify-center gap-1.5 mt-2">
                 <div
-                  class="w-1.5 h-1 rounded-full bg-surface-container-highest"
+                  class="dot w-8 h-1 rounded-full bg-primary cursor-pointer"
                 ></div>
                 <div
-                  class="w-1.5 h-1 rounded-full bg-surface-container-highest"
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
                 ></div>
               </div>
             </div>
@@ -351,21 +384,41 @@
               <div class="flex flex-wrap gap-3">
                 <span
                   class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
-                  >// UI Design</span
+                  >// Web App</span
                 >
                 <span
                   class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
-                  >// 2023</span
+                  >// 2026</span
                 >
                 <span
                   class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
-                  >// Framer</span
+                  >// Tailwind</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// PHP</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// MySQL</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// Python</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// Machine Learning</span
+                >
+                <span
+                  class="font-label text-xs bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full"
+                  >// Random Forest</span
                 >
               </div>
               <h3
                 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
               >
-                Archiviste Portfolio
+                Baby Stunting Prediction
               </h3>
               <p class="text-on-surface-variant leading-relaxed">
                 A boutique digital archive platform for independent
@@ -375,7 +428,8 @@
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
-                href="#"
+                href="https://github.com/MrTatTa/stunting-detector"
+                target="_blank"
               >
                 View Project
                 <span
@@ -384,31 +438,48 @@
                 >
               </a>
             </div>
-            <div class="group/media">
+            <div class="order-1 lg:order-2 group/media">
               <div
-                class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
+                class="slider flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
               >
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="Archiviste View 1"
-                    class="w-full aspect-video object-cover rounded-2xl shadow-lg group-hover/media:shadow-2xl transition-shadow duration-500"
-                    data-alt="Minimalist gallery website showing architectural photos"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV-vdYtVH8EnPicPsfqWXL0AfaRB33wtnnSUHL8TWJ645ghro57UInO4Tid3nQyUaTMbPghx7NM7-wof6CUn62JnBbWrjoncAszoygiWd8UxQmjJUksrTaBZhig5kLBvChJ2gELj-_0IW7P6gXXRQokvzElFCSG_IbOW7YsX4W2A8wU6K9PpRv9ay-YseXGjjCXMzYPU9DeTNNosby4JR9f6Csyqu4EsbMiI4Zv6VdUdCckwfQR-6c8GJGPg5yYV6wcP90hUHw2qg"
+                    src="projects/stikes/index.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="Archiviste View 2"
+                    src="projects/stikes/prediksi.png"
                     class="w-full aspect-video object-cover rounded-2xl shadow-lg"
-                    data-alt="Modern office workspace with large display"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtw6N9gE_MhkBgrXRUxIbLK9sxAPeBqlW84G3G9qjVL7upLfxa3FjrTfZlgzAegoEDmaZI7Nh8QmpUJFMurFosdvWpW7hGuqTn7k6DGGe1AoV5EEzbJv8e3CNk1e4JuogaW5KND0L3N4KvC3giOt-c-7bzhSME38LPak4fFSP8Yda1yxpVPTp26GSFYyrxRhvuabdnFqWX1wxFn6uO3DOdfZKcD9sqcl9owD6ZBd7dexa-uJwREbxyPRx-W7yTCa7TNv8Y6iU84Uk"
+                  />
+                </div>
+                <div class="flex-none w-full snap-center">
+                  <img
+                    src="projects/stikes/hasil.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
+                  />
+                </div>
+                <div class="flex-none w-full snap-center">
+                  <img
+                    src="projects/stikes/parameter.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
               </div>
-              <div class="flex justify-center gap-1.5 mt-2">
-                <div class="w-8 h-1 rounded-full bg-primary"></div>
+
+              <div class="dots flex justify-center gap-1.5 mt-2">
                 <div
-                  class="w-1.5 h-1 rounded-full bg-surface-container-highest"
+                  class="dot w-8 h-1 rounded-full bg-primary cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
                 ></div>
               </div>
             </div>
@@ -435,7 +506,7 @@
               <h3
                 class="text-3xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors"
               >
-                FocusFlow App
+                Sistem Manajemen Kios Terminal
               </h3>
               <p class="text-on-surface-variant leading-relaxed">
                 A productivity application that uses biometric feedback to
@@ -445,7 +516,7 @@
               </p>
               <a
                 class="inline-flex items-center gap-2 text-primary font-headline font-bold group/link"
-                href="#"
+                href="project-unavailable.html"
               >
                 View Project
                 <span
@@ -456,33 +527,126 @@
             </div>
             <div class="order-1 lg:order-2 group/media">
               <div
-                class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
+                class="slider flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 pb-4 scroll-smooth"
               >
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="FocusFlow View 1"
-                    class="w-full aspect-video object-cover rounded-2xl shadow-lg group-hover/media:shadow-2xl transition-shadow duration-500"
-                    data-alt="Smartphone showing a minimalist dark productivity app"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8GP9LuN8VZ5_5xxgeez50ZYUsO3L8qfA1-rlbWOkkkErVbUVyyrSM4MyutfB9EBhQGIrLcI1_rU8lOLlElKIqYQ2OV6ZKG-Hv7DdvkSBim66R2sCZWtxeX-DBxYVhQTYNWUmm78OhQyoSUOJbZxPwAuBdhBcqgSVjx6jbhQ7oJxG0lNRQBX8RqxLidwLMdZk9ZL9pDHYFWkIoD2yOUt57GGJgV_5go4ZYHqgE3NKbLUqUSAg4evAli330AxBlhxRzOqXT4VZllz4"
+                    src="projects/dishub/index.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
                 <div class="flex-none w-full snap-center">
                   <img
-                    alt="FocusFlow View 2"
+                    src="projects/dishub/terminal.png"
                     class="w-full aspect-video object-cover rounded-2xl shadow-lg"
-                    data-alt="Code editor with clean syntax highlighting"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWfk7zY74vXjy78H4HedskzGaE5tKrA4uU3874e_A77YdaoEbBVxyv33sc2ZB8ArRhCkfcU4K7G_cdTSMxTqSb_ebAV-OMZs7vpHj2b_wUvqssIdUeWSA-D34xRf3z3DT6zgL5iBhprHjwMStM5tXLY9t_dRTAnUCNRfYaXffNmqT1hulIVaPX9rfB_ATJohtNOvf4gsv2DUb6l7bhiTPcx_e9EVwlzvFUFv3xbeJHjVBUz5AbuF65Fz9qGj26n_Ft_ZqgiTUJIgM"
+                  />
+                </div>
+                <div class="flex-none w-full snap-center">
+                  <img
+                    src="projects/dishub/kios.png"
+                    class="w-full aspect-video object-cover rounded-2xl shadow-lg"
                   />
                 </div>
               </div>
-              <div class="flex justify-center gap-1.5 mt-2">
-                <div class="w-8 h-1 rounded-full bg-primary"></div>
+
+              <div class="dots flex justify-center gap-1.5 mt-2">
                 <div
-                  class="w-1.5 h-1 rounded-full bg-surface-container-highest"
+                  class="dot w-8 h-1 rounded-full bg-primary cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
+                ></div>
+                <div
+                  class="dot w-1.5 h-1 rounded-full bg-surface-container-highest cursor-pointer"
                 ></div>
               </div>
             </div>
           </article>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section class="space-y-12 mt-32" id="contact">
+        <div class="flex items-center gap-4 reveal">
+          <h2
+            class="font-label text-primary text-lg tracking-widest uppercase shrink-0"
+          >
+            // Contact
+          </h2>
+          <div
+            class="h-[1px] flex-grow bg-surface-container-highest line-grow"
+          ></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
+          <!-- Left Content -->
+          <div class="space-y-6">
+            <h3 class="text-3xl font-headline font-bold">
+              Mari memulai
+              <span class="text-primary">percakapan</span>
+            </h3>
+
+            <p class="text-on-surface-variant leading-relaxed">
+              Punya ide, project, atau sekadar ingin ngobrol soal teknologi?
+              Feel free buat reach out. Aku selalu terbuka untuk kolaborasi atau
+              diskusi menarik.
+            </p>
+
+            <div class="flex flex-col gap-3 pt-4">
+              <a
+                href="mailto:websmithid.official@gmail.com"
+                target="_blank"
+                class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition"
+              >
+                <span class="material-symbols-outlined">mail</span>
+                websmithid.official@gmail.com
+              </a>
+
+              <a
+                href="https://github.com/MrTatTa"
+                target="_blank"
+                class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition"
+              >
+                <span class="material-symbols-outlined">code</span>
+                github.com/MrTatTa
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Card -->
+          <div
+            class="bg-surface-container rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all"
+          >
+            <h4 class="font-headline font-semibold text-xl mb-4">
+              Quick Message
+            </h4>
+
+            <form class="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary"
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary"
+              />
+
+              <textarea
+                rows="4"
+                placeholder="Your Message"
+                class="w-full px-4 py-3 rounded-xl bg-surface-container-low outline-none focus:ring-2 focus:ring-primary resize-none"
+              ></textarea>
+
+              <button
+                type="submit"
+                class="w-full py-3 bg-primary text-on-primary rounded-xl font-headline font-semibold hover:scale-[1.02] transition-all active:scale-95"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
@@ -494,12 +658,13 @@
         <div
           class="font-label text-on-surface-variant text-sm mb-6 md:mb-0 reveal delay-100"
         >
-          © 2024 Alex Curator // Powered by Code
+          © 2026 Bara Paramarta // Designed & Developed
         </div>
         <div class="flex gap-8 reveal delay-200">
           <a
             class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
-            href="#"
+            href="https://github.com/MrTatTa"
+            target="_blank"
             >GitHub</a
           >
           <a
@@ -510,14 +675,17 @@
           <a
             class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
             href="#"
-            >Twitter</a
+            >Instagram</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest opacity-80 hover:opacity-100"
+            href="#"
+            >Youtube</a
           >
         </div>
         <div
           class="mt-8 md:mt-0 font-label text-primary font-bold text-lg tracking-tighter reveal delay-300"
-        >
-          AC_
-        </div>
+        ></div>
       </div>
     </footer>
     <script>
@@ -571,6 +739,78 @@
                 dot.classList.add("w-1.5");
               }
             });
+          }
+        });
+      });
+    </script>
+    <script>
+      document.querySelectorAll("article").forEach((card) => {
+        const slider = card.querySelector(".slider");
+        const dots = card.querySelectorAll(".dot");
+
+        let index = 0;
+        const totalSlides = dots.length;
+
+        function updateSlider(i) {
+          const width = slider.clientWidth;
+
+          slider.scrollTo({
+            left: width * i,
+            behavior: "smooth",
+          });
+
+          dots.forEach((dot, idx) => {
+            dot.classList.remove("w-8", "bg-primary");
+            dot.classList.add("w-1.5", "bg-surface-container-highest");
+
+            if (idx === i) {
+              dot.classList.add("w-8", "bg-primary");
+            }
+          });
+
+          index = i;
+        }
+
+        // klik dots
+        dots.forEach((dot, i) => {
+          dot.addEventListener("click", () => {
+            updateSlider(i);
+          });
+        });
+
+        // auto slide
+        setInterval(() => {
+          let next = (index + 1) % totalSlides;
+          updateSlider(next);
+        }, 5000);
+      });
+    </script>
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150; // sedikit lebih besar biar akurat
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+          ) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("text-primary", "border-b-2", "border-primary");
+          link.classList.add("text-on-surface-variant");
+
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("text-primary", "border-b-2", "border-primary");
+            link.classList.remove("text-on-surface-variant");
           }
         });
       });
